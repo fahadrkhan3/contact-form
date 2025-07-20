@@ -1,0 +1,282 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Basic Reset & Box Sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Gradient Background */
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333; /* Darker text for better contrast */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px; /* Increased padding */
+    border-radius: 12px; /* More rounded corners */
+    /* Enhanced Shadow */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 650px; /* Slightly wider */
+    animation: fadeIn 0.8s ease-out; /* Simple fade-in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2193b0; /* Coordinated with gradient */
+    font-size: 2.2em; /* Larger title */
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-title .fas {
+    margin-right: 15px;
+    color: #6dd5ed; /* Lighter icon color */
+}
+
+.form-group {
+    margin-bottom: 25px; /* More spacing */
+    position: relative; /* For label animation/positioning */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600; /* Bolder label */
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 14px; /* Increased padding */
+    border: 1px solid #ddd; /* Lighter default border */
+    border-radius: 8px; /* More rounded inputs */
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fcfcfc; /* Slightly off-white background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #2193b0; /* Highlight border on focus */
+    box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.2); /* Subtle focus glow */
+    outline: none;
+    background-color: #fff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px; /* Minimum height for message area */
+}
+
+/* Placeholder styling */
+input::placeholder, textarea::placeholder {
+    color: #aaa;
+    transition: color 0.3s ease;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+    color: transparent; /* Make placeholder disappear on focus */
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    margin-top: 30px;
+}
+
+button[type="submit"],
+.clear-btn {
+    flex: 1; /* Make buttons take equal width */
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button[type="submit"] {
+    background-color: #2193b0;
+    color: white;
+    box-shadow: 0 5px 10px rgba(33, 147, 176, 0.3);
+}
+
+button[type="submit"]:hover {
+    background-color: #1a7b93;
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 8px 15px rgba(33, 147, 176, 0.4);
+}
+
+button[type="submit"]:active {
+    background-color: #16657a;
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 0 3px 5px rgba(33, 147, 176, 0.2);
+}
+
+.clear-btn {
+    background-color: #f0f0f0;
+    color: #555;
+    border: 1px solid #ddd;
+}
+
+.clear-btn:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.clear-btn:active {
+    background-color: #d0d0d0;
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Validation styling */
+.error-message {
+    color: #e74c3c; /* Red color for error messages */
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+    font-weight: 500;
+}
+
+input.error,
+textarea.error {
+    border-color: #e74c3c; /* Red border for invalid fields */
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+/* Form status messages (success/error after submission) */
+.form-status {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.form-status.success {
+    background-color: #d4edda;
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.form-status.error-submit { /* Different class for submission errors */
+    background-color: #f8d7da;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: none; /* Hidden by default */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Responsive Design - Media Queries (Adjusted for new design) */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    .form-title {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    button[type="submit"],
+    .clear-btn {
+        font-size: 0.95em;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    .form-title {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        flex-direction: column; /* Stack title and icon */
+    }
+
+    .form-title .fas {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 0.9em;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    button[type="submit"],
+    .clear-btn {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .form-actions {
+        flex-direction: column; /* Stack buttons on small screens */
+        gap: 10px;
+    }
+}
