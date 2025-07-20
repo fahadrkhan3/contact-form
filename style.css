@@ -1,7 +1,7 @@
-/* Import Google Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Basic Reset & Box Sizing */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,25 +10,25 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    /* Gradient Background */
+    
     background: linear-gradient(135deg, #6dd5ed, #2193b0);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    color: #333; /* Darker text for better contrast */
+    color: #333; 
 }
 
 .container {
     background-color: #ffffff;
-    padding: 40px; /* Increased padding */
-    border-radius: 12px; /* More rounded corners */
-    /* Enhanced Shadow */
+    padding: 40px; 
+    border-radius: 12px; 
+    
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     width: 100%;
-    max-width: 650px; /* Slightly wider */
-    animation: fadeIn 0.8s ease-out; /* Simple fade-in animation */
+    max-width: 650px; 
+    animation: fadeIn 0.8s ease-out; 
 }
 
 @keyframes fadeIn {
@@ -39,8 +39,8 @@ body {
 .form-title {
     text-align: center;
     margin-bottom: 30px;
-    color: #2193b0; /* Coordinated with gradient */
-    font-size: 2.2em; /* Larger title */
+    color: #2193b0;
+    font-size: 2.2em; 
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -49,18 +49,18 @@ body {
 
 .form-title .fas {
     margin-right: 15px;
-    color: #6dd5ed; /* Lighter icon color */
+    color: #6dd5ed; 
 }
 
 .form-group {
-    margin-bottom: 25px; /* More spacing */
-    position: relative; /* For label animation/positioning */
+    margin-bottom: 25px; 
+    position: relative; 
 }
 
 label {
     display: block;
     margin-bottom: 10px;
-    font-weight: 600; /* Bolder label */
+    font-weight: 600; 
     color: #555;
     transition: color 0.3s ease;
 }
@@ -69,49 +69,49 @@ input[type="text"],
 input[type="email"],
 textarea {
     width: 100%;
-    padding: 14px; /* Increased padding */
-    border: 1px solid #ddd; /* Lighter default border */
-    border-radius: 8px; /* More rounded inputs */
+    padding: 14px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
     font-size: 1em;
     font-family: 'Poppins', sans-serif;
     color: #333;
-    background-color: #fcfcfc; /* Slightly off-white background */
+    background-color: #fcfcfc; 
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border-color: #2193b0; /* Highlight border on focus */
-    box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.2); /* Subtle focus glow */
+    border-color: #2193b0; 
+    box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.2); 
     outline: none;
     background-color: #fff;
 }
 
 textarea {
     resize: vertical;
-    min-height: 120px; /* Minimum height for message area */
+    min-height: 120px; 
 }
 
-/* Placeholder styling */
+
 input::placeholder, textarea::placeholder {
     color: #aaa;
     transition: color 0.3s ease;
 }
 
 input:focus::placeholder, textarea:focus::placeholder {
-    color: transparent; /* Make placeholder disappear on focus */
+    color: transparent; 
 }
 
 .form-actions {
     display: flex;
-    gap: 15px; /* Space between buttons */
+    gap: 15px; 
     margin-top: 30px;
 }
 
 button[type="submit"],
 .clear-btn {
-    flex: 1; /* Make buttons take equal width */
+    flex: 1; 
     padding: 16px;
     border: none;
     border-radius: 8px;
@@ -133,13 +133,13 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #1a7b93;
-    transform: translateY(-2px); /* Lift effect on hover */
+    transform: translateY(-2px); 
     box-shadow: 0 8px 15px rgba(33, 147, 176, 0.4);
 }
 
 button[type="submit"]:active {
     background-color: #16657a;
-    transform: translateY(0); /* Press down effect */
+    transform: translateY(0); 
     box-shadow: 0 3px 5px rgba(33, 147, 176, 0.2);
 }
 
@@ -162,9 +162,9 @@ button[type="submit"]:active {
 }
 
 
-/* Validation styling */
+
 .error-message {
-    color: #e74c3c; /* Red color for error messages */
+    color: #e74c3c; 
     font-size: 0.9em;
     margin-top: 5px;
     display: none;
@@ -173,18 +173,18 @@ button[type="submit"]:active {
 
 input.error,
 textarea.error {
-    border-color: #e74c3c; /* Red border for invalid fields */
+    border-color: #e74c3c; 
     box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
 }
 
-/* Form status messages (success/error after submission) */
+
 .form-status {
     margin-top: 25px;
     padding: 15px;
     border-radius: 8px;
     font-weight: 600;
     text-align: center;
-    display: none; /* Hidden by default */
+    display: none; 
     opacity: 0;
     transition: opacity 0.5s ease;
 }
@@ -195,13 +195,13 @@ textarea.error {
     border: 1px solid #28a745;
 }
 
-.form-status.error-submit { /* Different class for submission errors */
+.form-status.error-submit { 
     background-color: #f8d7da;
     color: #dc3545;
     border: 1px solid #dc3545;
 }
 
-/* Loading Spinner */
+
 .spinner {
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-top: 3px solid #fff;
@@ -209,7 +209,7 @@ textarea.error {
     width: 20px;
     height: 20px;
     animation: spin 1s linear infinite;
-    display: none; /* Hidden by default */
+    display: none; 
 }
 
 @keyframes spin {
@@ -218,7 +218,7 @@ textarea.error {
 }
 
 
-/* Responsive Design - Media Queries (Adjusted for new design) */
+
 @media (max-width: 768px) {
     .container {
         padding: 30px;
@@ -249,7 +249,7 @@ textarea.error {
     .form-title {
         font-size: 1.8em;
         margin-bottom: 20px;
-        flex-direction: column; /* Stack title and icon */
+        flex-direction: column; 
     }
 
     .form-title .fas {
@@ -276,7 +276,7 @@ textarea.error {
     }
 
     .form-actions {
-        flex-direction: column; /* Stack buttons on small screens */
+        flex-direction: column; 
         gap: 10px;
     }
 }
